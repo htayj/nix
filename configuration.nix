@@ -8,7 +8,14 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
+      #<home-manager/nixos> 
     ];
+
+  #home-manager.useUserPackages = true;
+  #home-manager.useGlobalPackages = true;
+  #home-manager.backupFileExtension = "backup";
+  #home-manager.users.tay = import ./home.nix;
+
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
