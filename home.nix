@@ -6,8 +6,10 @@
   programs.bash = {
     enable= true;
     shellAliases={
-      test = "echo this is a test"; }; };
+      reload = "sudo nixos-rebuild switch --impure --flake ~/nixos/";
+      vim = "nvim" ;}; };
   home.packages = with pkgs; [
     bat
-    emacs ];
+    emacs
+  ];
 }
