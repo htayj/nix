@@ -62,29 +62,29 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
   # dwm
-#  services.xserver.windowManager.dwm.enable = true;
-#  services.xserver.windowManager.dwm.package = pkgs.dwm.override {
-#  patches = [
-#    # for local patch files, replace with relative path to patch file
-#    ./path/to/local.patch
-#    # for external patches
-#    (pkgs.fetchpatch {
-#      # replace with actual URL
-#      url = "https://dwm.suckless.org/patches/path/to/patch.diff";
-#      # replace hash with the value from `nix-prefetch-url "https://dwm.suckless.org/patches/path/to/patch.diff" | xargs nix hash to-sri --type sha256`
-#      # or just leave it blank, rebuild, and use the hash value from the error
-#      hash = "";
-#    })
-#  ];
-#};
+  #  services.xserver.windowManager.dwm.enable = true;
+  #  services.xserver.windowManager.dwm.package = pkgs.dwm.override {
+  #  patches = [
+  #    # for local patch files, replace with relative path to patch file
+  #    ./path/to/local.patch
+  #    # for external patches
+  #    (pkgs.fetchpatch {
+  #      # replace with actual URL
+  #      url = "https://dwm.suckless.org/patches/path/to/patch.diff";
+  #      # replace hash with the value from `nix-prefetch-url "https://dwm.suckless.org/patches/path/to/patch.diff" | xargs nix hash to-sri --type sha256`
+  #      # or just leave it blank, rebuild, and use the hash value from the error
+  #      hash = "";
+  #    })
+  #  ];
+  #};
   # awesomewm
   services.xserver.windowManager.awesome = {
-                enable = true;
-                luaModules = with pkgs.luaPackages; [
-                    luarocks # is the package manager for Lua modules
-                    luadbi-mysql # Database abstraction layer
-                    awesome-wm-widgets # Community collection of widgets
-                ];
+    enable = true;
+    luaModules = with pkgs.luaPackages; [
+      luarocks # is the package manager for Lua modules
+      luadbi-mysql # Database abstraction layer
+      awesome-wm-widgets # Community collection of widgets
+    ];
   };
 
   # Configure keymap in X11
@@ -122,7 +122,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       kdePackages.kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -135,48 +135,15 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  git
-  mpd
-  mpv
-  nemo
-  xclip
-  
-  #  wget
-#awesome plugin stuff
-#picom
-#acpid
-#git
-#mpd
-#ncmpcpp
-#wmctrl
-#lxappearance
-#gucharmap
-#nemo
-#alacritty
-#neovim
-#polkit_gnome
-#xdotool
-#xclip
-#scrot
-#brightnessctl
-#jq
-#acpi
-#rofi
-#inotify-tools 
-#zsh 
-#mpdris2 
-#bluez 
-#bluez-tools 
-##bluez-plugins 
-#acpi 
-##acpi-call 
-#playerctl 
-#redshift 
-##cutefish-cursor-themes-git 
-##cutefish-icons 
-#upower  
-#gnutar
+    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    neovim
+    git
+    mpd
+    mpv
+    nemo
+    xclip
+    
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
