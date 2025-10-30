@@ -8,14 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       /etc/nixos/hardware-configuration.nix
-      #<home-manager/nixos> 
     ];
-
-  #home-manager.useUserPackages = true;
-  #home-manager.useGlobalPackages = true;
-  #home-manager.backupFileExtension = "backup";
-  #home-manager.users.tay = import ./home.nix;
-
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -78,14 +71,14 @@
   #  ];
   #};
   # awesomewm
-  services.xserver.windowManager.awesome = {
-    enable = true;
-    luaModules = with pkgs.luaPackages; [
-      luarocks # is the package manager for Lua modules
-      luadbi-mysql # Database abstraction layer
-      awesome-wm-widgets # Community collection of widgets
-    ];
-  };
+  # services.xserver.windowManager.awesome = {
+  #   enable = true;
+  #   luaModules = with pkgs.luaPackages; [
+  #     luarocks # is the package manager for Lua modules
+  #     luadbi-mysql # Database abstraction layer
+  #     awesome-wm-widgets # Community collection of widgets
+  #   ];
+  # };
 
   # Configure keymap in X11
   services.xserver.xkb = {
